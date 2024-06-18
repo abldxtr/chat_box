@@ -81,8 +81,8 @@ export default function InputChat() {
   return (
     <div
       className={classNames(
-        " bg-white  border-t border-[#eff3f4]  py-1 isolate ",
-        open ? "z-10 sticky bottom-0 " : "z-[-1] hidden ",
+        " bg-white  border-t border-[#eff3f4]  sticky bottom-0  py-1 isolate ",
+        // open ? "z-10 sticky bottom-0 " : "z-[-1] hidden ",
       )}
     >
       {/* temp image  */}

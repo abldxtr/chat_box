@@ -18,15 +18,22 @@ export default function Messages() {
   };
 
   useEffect(() => {
-    setTimeout(() => {
-      lastMessageRef.current?.scrollIntoView({ behavior: "smooth" });
-    }, 100);
+    // setTimeout(() => {
+    // if (messages.length > 5) {
+    lastMessageRef.current?.scrollIntoView({ behavior: "smooth" });
+    // }
+    // }, 100);
   }, [messages, open, setOpen]);
   return (
     <div
       className={classNames(
-        " w-full  sticky top-10  max-h-[340px]  p-2 transition-all duration-300  ",
-        open ? "h-full overflow-auto " : " h-0 overflow-hidden hidden",
+        "w-full  p-2 flex-1 overflow-auto pb-[150px]  h-full   transition-all duration-300   ",
+        // messages.length > 5
+        //   ? "overflow-auto pt-[153px] "
+        //   : " overflow-hidden pt-0  ",
+        // open ? "h-full overflow-auto mt-[153px]" : " h-0 overflow-hidden hidden// ",
+        // "max-h-[340px] ",
+        // "sticky top-10 ",
       )}
     >
       {/* <!-- first message --> */}
@@ -40,20 +47,20 @@ export default function Messages() {
             ref={index === messages.length - 1 ? lastMessageRef : null}
           >
             {img ? (
-              <div className=" flex items-center gap-4 ">
+              <div className=" flex items-center gap-4 group">
                 <div className="  ">
                   <button
                     onClick={() => deleteMessageById(item.id)}
                     className=" size-[34px] hover:bg-[#1d9bf01a] flex items-center justify-center transition-all duration-300
-                   rounded-full  "
+                   rounded-full  opacity-0 group-hover:opacity-100 "
                   >
                     <svg
                       viewBox="0 0 24 24"
                       aria-hidden="true"
-                      className="size-[20px] shrink-0 fill-[#1d9bf0] "
+                      className="size-[20px] shrink-0 fill-[#6b7f8e]  "
                     >
                       <g>
-                        <path d="M3 5.5C3 4.119 4.119 3 5.5 3h13C19.881 3 21 4.119 21 5.5v13c0 1.381-1.119 2.5-2.5 2.5h-13C4.119 21 3 19.881 3 18.5v-13zM5.5 5c-.276 0-.5.224-.5.5v9.086l3-3 3 3 5-5 3 3V5.5c0-.276-.224-.5-.5-.5h-13zM19 15.414l-3-3-5 5-3-3-3 3V18.5c0 .276.224.5.5.5h13c.276 0 .5-.224.5-.5v-3.086zM9.75 7C8.784 7 8 7.784 8 8.75s.784 1.75 1.75 1.75 1.75-.784 1.75-1.75S10.716 7 9.75 7z"></path>
+                        <path d="M16 6V4.5C16 3.12 14.88 2 13.5 2h-3C9.11 2 8 3.12 8 4.5V6H3v2h1.06l.81 11.21C4.98 20.78 6.28 22 7.86 22h8.27c1.58 0 2.88-1.22 3-2.79L19.93 8H21V6h-5zm-6-1.5c0-.28.22-.5.5-.5h3c.27 0 .5.22.5.5V6h-4V4.5zm7.13 14.57c-.04.52-.47.93-1 .93H7.86c-.53 0-.96-.41-1-.93L6.07 8h11.85l-.79 11.07zM9 17v-6h2v6H9zm4 0v-6h2v6h-2z"></path>
                       </g>
                     </svg>
                   </button>
@@ -63,31 +70,31 @@ export default function Messages() {
                     key={index}
                     src={url}
                     alt={`uploaded-img-${index}`}
-                    className="size-[120px] object-cover m-2"
+                    className="size-[120px] object-cover m-2 cursor-pointer "
                   />
                 ))}
               </div>
             ) : (
-              <div className="flex flex-reverse">
+              <div className="flex flex-reverse group gap-2 ">
                 {/* for delete messag */}
                 <div className="  ">
                   <button
                     onClick={() => deleteMessageById(item.id)}
                     className=" size-[34px] hover:bg-[#1d9bf01a] flex items-center justify-center transition-all duration-300
-                   rounded-full  "
+                   rounded-full opacity-0 group-hover:opacity-100  "
                   >
                     <svg
                       viewBox="0 0 24 24"
                       aria-hidden="true"
-                      className="size-[20px] shrink-0 fill-[#1d9bf0] "
+                      className="size-[20px] shrink-0 fill-[#6b7f8e]  "
                     >
                       <g>
-                        <path d="M3 5.5C3 4.119 4.119 3 5.5 3h13C19.881 3 21 4.119 21 5.5v13c0 1.381-1.119 2.5-2.5 2.5h-13C4.119 21 3 19.881 3 18.5v-13zM5.5 5c-.276 0-.5.224-.5.5v9.086l3-3 3 3 5-5 3 3V5.5c0-.276-.224-.5-.5-.5h-13zM19 15.414l-3-3-5 5-3-3-3 3V18.5c0 .276.224.5.5.5h13c.276 0 .5-.224.5-.5v-3.086zM9.75 7C8.784 7 8 7.784 8 8.75s.784 1.75 1.75 1.75 1.75-.784 1.75-1.75S10.716 7 9.75 7z"></path>
+                        <path d="M16 6V4.5C16 3.12 14.88 2 13.5 2h-3C9.11 2 8 3.12 8 4.5V6H3v2h1.06l.81 11.21C4.98 20.78 6.28 22 7.86 22h8.27c1.58 0 2.88-1.22 3-2.79L19.93 8H21V6h-5zm-6-1.5c0-.28.22-.5.5-.5h3c.27 0 .5.22.5.5V6h-4V4.5zm7.13 14.57c-.04.52-.47.93-1 .93H7.86c-.53 0-.96-.41-1-.93L6.07 8h11.85l-.79 11.07zM9 17v-6h2v6H9zm4 0v-6h2v6h-2z"></path>
                       </g>
                     </svg>
                   </button>
                 </div>
-                <div className=" flex items-center justify-end bg-[rgb(29,155,240)] rounded-br-sm rounded-2xl py-[12px] px-[16px] text-right text-white leading-[20px] text-[15px] hover:bg-[#1a8cd8] transition-all duration-300    ">
+                <div className=" flex cursor-pointer items-center justify-end bg-[rgb(29,155,240)] rounded-br-sm rounded-2xl py-[12px] px-[16px] text-right text-white leading-[20px] text-[15px] hover:bg-[#1a8cd8] transition-all duration-300    ">
                   <span>{item.text}</span>
                 </div>
               </div>

@@ -13,7 +13,7 @@ export default function ChatBox() {
   return (
     <div
       className={classNames(
-        " fixed bottom-0 right-6 isolate overflow-hidden  max-w-[400px] min-w-[350px] ",
+        // " fixed bottom-0 right-6 isolate overflow-hidden  max-w-[400px] min-w-[350px] ",
         " bg-[#00000000] [box-shadow:rgb(101_119_134_/_20%)_0px_0px_15px,_rgb(101_119_134_/_15%)_0px_0px_3px_1px] ",
         "rounded-tl-[16px]   rounded-tr-[16px] transition-all duration-300 ",
         open ? "h-[453px]" : "h-[53px] ",
@@ -28,7 +28,7 @@ export default function ChatBox() {
         {/* <!-- header  --> */}
         <div
           className={classNames(
-            "  sticky top-0 w-full flex items-start pt-3 justify-between px-[16px] bg-white h-[53px] sm:w-[400px] w-[350px] ",
+            "  sticky top-0 flex items-start pt-3 justify-between px-[16px] bg-white h-[53px] sm:w-[400px] w-[350px] ",
             open ? "" : "",
           )}
           onClick={() => setOpen(!open)}
