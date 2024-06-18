@@ -3,7 +3,7 @@ export default function Message_list() {
     <section className=" max-w-[400px] lg:flex hidden  relative flex-1 border-x-[1px] border-[#eff3f4]">
       <div className="flex  w-full flex-col">
         {/* <!-- head --> */}
-        <div className="flex-1 flex w-full sticky top-0 ">
+        <div className=" flex w-full sticky top-0 ">
           <div className=" h-[53px] w-full bg-[#ffffffd9] backdrop-blur-md">
             <div className="flex h-full w-full flex-1 items-center justify-between px-[16px]">
               {/* <!-- 1 --> */}
@@ -48,7 +48,7 @@ export default function Message_list() {
         {/* <!-- body --> */}
         <div className=" flex  flex-col grow   ">
           {/* <!-- 1 --> */}
-          <div className="flex flex-1 ">
+          <div className="flex  ">
             <div className=" flex-1 ">
               {/* <!-- search bar --> */}
               <div className="min-h-[40px] p-[12px]">
@@ -108,8 +108,8 @@ export default function Message_list() {
             </div>
           </div>
           {/* <!-- 2 --> */}
-          <div className="min-h-[40px] w-full flex-1 cursor-pointer p-[12px] transition-all hover:bg-[#f7f9f9]">
-            <div className="flex h-full min-h-[40px] items-start justify-between group  ">
+          <div className="min-h-[40px] w-full flex-1   ">
+            <div className="flex  min-h-[40px] items-start cursor-pointer p-[12px] justify-between group transition-all hover:bg-[#f7f9f9] ">
               {/* <!-- icone or profile pic --> */}
               <div className="mr-[16px] flex size-[48px] cursor-pointer items-center justify-center rounded-full border border-[#e5eaec] bg-[#ffffff] transition-all duration-300  ">
                 <img

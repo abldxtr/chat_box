@@ -6,7 +6,7 @@ export default function Main() {
     <main className="flex h-full items-start w-full ">
       <div className="flex shrink grow flex-1 items-start min-w-full">
         {/* <!-- messages list --> */}
-        <div className=" overflow-y-auto overflow-x-hidden flex  h-full ">
+        <div className=" overflow-y-auto overflow-x-hidden flex  h-screen ">
           <Message_list />
         </div>
 
