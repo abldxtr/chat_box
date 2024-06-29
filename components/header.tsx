@@ -14,14 +14,14 @@ import {
 
 export default function Header() {
   const icons = [
-    <SvgIcon2 />,
-    <SvgIcon3 />,
-    <SvgIcon4 />,
-    <SvgIcon5 />,
-    <SvgIcon6 />,
-    <SvgIcon7 />,
-    <SvgIcon8 />,
-    <SvgIcon9 />,
+    SvgIcon2,
+    SvgIcon3,
+    SvgIcon4,
+    SvgIcon5,
+    SvgIcon6,
+    SvgIcon7,
+    SvgIcon8,
+    SvgIcon9,
     // <SvgIcon10 />,
   ];
   return (
@@ -38,13 +38,13 @@ export default function Header() {
         {/* <!-- 2 and nav section --> */}
         <div className="mb-[4px] mt-[2px] flex w-full items-center">
           <nav className="flex w-full flex-col items-end">
-            {icons.map((item, index) => {
+            {icons.map((Item, index) => {
               return (
                 <div
                   key={index}
                   className="flex size-[52px] cursor-pointer items-center justify-center rounded-full transition-all duration-300 hover:bg-[#0f14191a]"
                 >
-                  {item}
+                  {<Item />}
                 </div>
               );
             })}
